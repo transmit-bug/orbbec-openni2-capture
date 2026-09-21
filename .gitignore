@@ -1,0 +1,25 @@
+# --- Build output (regenerate with cmake) ---
+/build/
+/build_*/
+cmake-build-*/
+
+# In-source cmake artifacts
+/CMakeCache.txt
+/CMakeFiles/
+/cmake_install.cmake
+/Makefile
+
+# --- Captured frames ---
+/output/*
+!/output/.gitkeep
+
+# --- Third-party archives / downloads ---
+*.zip
+*.tar.gz
+*.tar.bz2
+
+# --- Editor / OS noise ---
+*.swp
+*.swo
+*~
+.DS_Store
