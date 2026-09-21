@@ -10,6 +10,9 @@ cmake-build-*/
 /Makefile
 
 # --- Captured frames ---
+# output/ 里的东西全是采集或分析产物，一律不入库。
+# 其中只有 output/seq_indoor/（原始录制）不可再生，所以清理磁盘时只删生成物。
+# .gitkeep 例外是为了让全新 clone 也有这个目录（C++ 侧直接往这里写）。
 /output/*
 !/output/.gitkeep
 
@@ -17,6 +20,18 @@ cmake-build-*/
 *.zip
 *.tar.gz
 *.tar.bz2
+
+# --- Python (uv) ---
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# --- Blender byproducts ---
+# scripts/view_in_blender.py --save 会在 PLY 旁边写这两个；都能从 PLY 重生。
+*.blend
+*.blend1
 
 # --- Editor / OS noise ---
 *.swp
